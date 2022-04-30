@@ -1,16 +1,17 @@
 # Welcome to my Lisp Interpreter!
 This is a lisp interpeter that is written entirely in python. It is a very simple interpreter that can be used to evaluate lisp expressions. It is written in such a way that it can be used as a library for other projects by simply importing the interpreter.
 
-## Compiling/Running
-To compile the interpreter, simply run the following command:
-```
-python3 lisp.py
-```
-
 ## Testing
-For ease of testing, a test script has been included `test.py`. This will run the commands as specified in the file on canvas and verify correct output and behavior.
+For ease of testing, a test script has been included \`test.py\`. This will run the commands as specified in the file on canvas and verify correct output and behavior.
 ```
 python3 test.py
+```
+
+## Running
+### Note: A Python 3 interpreter is required to run this interpreter.
+To run the interpreter, use the following command:
+```
+python3 lisp.py
 ```
 
 ## Syntax
