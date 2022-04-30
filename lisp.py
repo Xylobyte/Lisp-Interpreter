@@ -103,6 +103,27 @@ def GT(args):
     else:
         return False
 
+def LE(args):
+    """ Less than or equal: returns true if first argument is less than or equal to second """
+    if len(args) < 2:
+        raise LispException("Not enough arguments")
+    if len(args) > 2:
+        raise LispException("Too many arguments")
+    if args[0] <= args[1]:
+        return True
+    else:
+        return False
+def GE(args):
+    """ Greater than or equal: returns true if first argument is greater than or equal to second """
+    if len(args) < 2:
+        raise LispException("Not enough arguments")
+    if len(args) > 2:
+        raise LispException("Too many arguments")
+    if args[0] >= args[1]:
+        return True
+    else:
+        return False
+
 def IF(args):
     """ If statement: if first argument is true, evaluates second argument, else evaluates third """
     if len(args) < 3:
@@ -406,6 +427,10 @@ def evaluate(tokens, scope=None):
         return LT(tokens[1:])
     elif tokens[0] == '>':  # if first token is >, return whether all numbers in the list are greater than the next number
         return GT(tokens[1:])
+    elif tokens[0] == '<=':  # if first token is <=, return whether all numbers in the list are less than or equal to the next number
+        return LE(tokens[1:])
+    elif tokens[0] == '>=':  # if first token is >=, return whether all numbers in the list are greater than or equal to the next number
+        return GE(tokens[1:])
     elif tokens[0] == 'IF': # if first token is IF, evaluate the first argument and return the second argument if it is true, otherwise return the third argument
         return IF(tokens[1:])
     elif tokens[0] == 'CDR':    # if first token is CDR, return the rest of the list
@@ -438,6 +463,10 @@ def evaluate(tokens, scope=None):
         return POW(tokens[1:])
     elif tokens[0] == 'SET!':   # if first token is SET!, set the value of the first argument to the second argument
         return DEFINE(tokens[1:])
+    elif tokens[0] == True:  # if first token is True, return T
+        return 'T'
+    elif tokens[0] == False: # if first token is False, return NIL
+        return NIL()
     else:   # if first token is not a function, return an error
         return f"{tokens[0]} is not a function name; try using a symbol instead"
 
