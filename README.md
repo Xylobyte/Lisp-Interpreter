@@ -7,7 +7,7 @@ For ease of testing, a test script has been included \`test.py\`. This will run 
 python3 test.py
 ```
 
-## Running
+## Running in Interactive Mode
 ### Note: A Python 3 interpreter is required to run this interpreter.
 To run the interpreter, use the following command:
 ```
