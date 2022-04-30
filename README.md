@@ -13,6 +13,8 @@ To run the interpreter, use the following command:
 ```
 python3 lisp.py
 ```
+## Output
+The output of the interpreter is printed to the console as well as written in a file called \'lisp.out\'.
 
 ## Syntax
 Uses standard lisp syntax. Can handle multiple expressions on a single line.
